@@ -1,1 +1,13 @@
-<p>missionlist works!</p>
+<h2>Mission List</h2>
+
+<div>
+    <!-- <p *ngIf="missions.length === 0">Loading</p> -->
+    <div *ngFor="let mission of missions" >
+        <a [routerLink]="['/missiondetails', mission.flight_number]">
+            <img src="{{mission.links.mission_patch_small}}" alt="mission patch" width="80px" height="80px"/>
+            <p> Mission Name: {{mission.mission_name}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Launch Year: {{mission.launch_year}}</p>
+            <p>{{mission.details}}</p>
+        </a>
+        <hr>
+    </div>
+</div>

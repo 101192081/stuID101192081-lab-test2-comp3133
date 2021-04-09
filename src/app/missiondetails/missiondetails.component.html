@@ -1,1 +1,29 @@
-<p>missiondetails works!</p>
+<a [routerLink]="['/missionlist']">
+    <button>BACK</button>
+</a>
+<h1>SpaceX Mission Detials</h1>
+<div id="container">
+    <hr>
+    <img src="{{mission.links.mission_patch}}" alt="mission patch" width="250px" height="250px"/>
+    <div id="info">
+        <h4>Mission - {{mission.mission_name}}</h4>
+        Name: {{mission.mission_name}}<br>
+        Launch Year: {{mission.launch_year}}
+        <br><br>
+        <h4>Rocket</h4>
+        Name: {{mission.rocket.rocket_name}}<br>
+        Type: {{mission.rocket.rocket_type}}
+        <br><br>
+        <h4>Launch Site</h4>
+        Name: {{mission.launch_site.site_name_long}}
+    </div>
+    <br>
+    <br>
+    <h4>Launch Details</h4>
+    {{mission.details}}
+    <h4>More Info On Launch Details</h4>
+    <a href="{{mission.links.article_link}}" target="_blank"><button>article</button></a>
+    <a href="{{mission.links.wikipedia}}" target="_blank"><button>wiki</button></a>
+    <a href="{{mission.links.video_link}}" target="_blank"><button>video</button></a>
+    <hr>
+</div>
